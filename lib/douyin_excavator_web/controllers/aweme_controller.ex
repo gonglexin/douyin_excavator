@@ -24,8 +24,11 @@ defmodule DouyinExcavatorWeb.AwemeController do
     "width" => 540
   }}, 35) 
 
-  def list(conn, %{"user_id" => user_id}) do
-    render conn, "list.html", awemes: DouyinExcavator.Crawler.get_aweme_list(user_id)
-#    render conn, "list.html", awemes: @aweme_list
+  def index(conn, params) do
+    query = params["query"]
+    user_id = query #todo: get the user_id
+
+    render conn, "index.html", awemes: DouyinExcavator.Crawler.get_aweme_list(user_id)
+#    render conn, "index.html", awemes: @aweme_list
   end
 end

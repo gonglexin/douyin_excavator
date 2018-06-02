@@ -1,7 +1,7 @@
 defmodule DouyinExcavatorWeb.AwemeView do
   use DouyinExcavatorWeb, :view
   
-  @download_url "https://aweme.snssdk.com/aweme/v1/play/"  
+  @download_url "https://aweme.snssdk.com/aweme/v1/play/"
 
   def aweme_video_url(%{"video" => video}) do
     uri = video["play_addr"]["uri"]
@@ -19,8 +19,8 @@ defmodule DouyinExcavatorWeb.AwemeView do
 
   def aweme_image_url(%{"video" => video}) do
     # todo: detect ua (chrome support webp image)
-    urls = video["dynamic_cover"]["url_list"]
-#    urls = video["cover"]["url_list"]
+#    urls = video["dynamic_cover"]["url_list"]
+    urls = video["cover"]["url_list"]
    
     urls |> List.first
   end

@@ -17,7 +17,7 @@ defmodule DouyinExcavatorWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/aweme_list/:user_id", AwemeController, :list
+    resources "/aweme", AwemeController, only: [:index]
   end
 
   # Other scopes may use custom stacks.
