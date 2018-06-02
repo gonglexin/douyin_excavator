@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Hello DouyinExcavator!</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bulma/0.7.1/css/bulma.min.css">
+  </head>
+
+  <body>
+      <section class="section">
+	  <div class="container">
+	      <from>
+		  <div class="field is-grouped is-grouped-centered">		      
+		      <div class="control is-expanded">
+			  <input class="input" type="text" placeholder="用户分享链接(非抖音ID), 获取方法见帮助页面">
+		      </div>		    			
+		      <div class="control">
+			  <button class="button is-primary">解析视频</button>
+		      </div>
+		  </div>
+	      </from>
+	  </div>
+      </section>
+    <section class="section">
+      <div class="container">
+	<!-- 
+        <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+	<p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+-->
+	<%= render @view_module, @view_template, assigns %>
+      </div>
+    </section>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>
