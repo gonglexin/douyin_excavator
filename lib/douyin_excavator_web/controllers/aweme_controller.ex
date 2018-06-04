@@ -42,7 +42,7 @@ defmodule DouyinExcavatorWeb.AwemeController do
       end
 
     render(conn, "index.html", awemes: DouyinExcavator.Crawler.get_aweme_list(user_id))
-    # render conn, "index.html", awemes: @aweme_list
+    # render(conn, "index.html", awemes: @aweme_list)
   end
 
   # todo: flash message: please input corrent url

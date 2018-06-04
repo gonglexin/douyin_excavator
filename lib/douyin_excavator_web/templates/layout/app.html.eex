@@ -15,7 +15,8 @@
     -->
   </head>
 
-  <body>
+  <body class="has-navbar-fixed-top">
+    <%= render DouyinExcavatorWeb.SharedView, "nav.html"%>
     <section class="section">
 	    <div class="container">
 	      <%= form_for @conn, aweme_path(@conn, :index), [method: :get], fn f -> %>
@@ -36,6 +37,12 @@
 	      <%= render @view_module, @view_template, assigns %>
 	    </div>
     </section>
+    <footer class="footer">
+      <div class="container">
+        视频归相关网站及作者所有，本站不存储任何视频及图片。
+        &copy;2018 douyinxiu.com
+      </div>
+    </footer>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

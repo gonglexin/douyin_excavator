@@ -3,4 +3,4 @@
 		<%= get_flash(@conn, :info) %>
 		<%= get_flash(@conn, :error) %>
   </div>
-<%= end %>
+<% end %>
