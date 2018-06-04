@@ -1,0 +1,6 @@
+<%= if get_flash(@conn, :info) || get_flash(@conn, :error) do %>
+  <div class="notification is-info">
+		<%= get_flash(@conn, :info) %>
+		<%= get_flash(@conn, :error) %>
+  </div>
+<%= end %>

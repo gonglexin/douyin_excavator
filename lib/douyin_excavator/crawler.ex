@@ -14,6 +14,10 @@ defmodule DouyinExcavator.Crawler do
       "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1"
   ]
 
+  def get_aweme_list(nil, max_cursor) do
+    []
+  end
+
   # todo: get the signature
   def get_aweme_list(user_id, max_cursor \\ "0") do
     user_video_params = %{
@@ -21,24 +25,21 @@ defmodule DouyinExcavator.Crawler do
       count: "21",
       max_cursor: max_cursor,
       aid: "1128",
-#      _signature: "IqffpAAAebLdWCBbIXOsnSKn37"
-      _signature: "82.EuQAAqIcMkDtGiE4oH.NvxK"
+      # _signature: "82.EuQAAqIcMkDtGiE4oH.NvxK"
+      _signature: "sMGoBAAA6-BPPlf7dRn9pLDBqB"
     }
 
     #    todo: Use proxy
-    #    proxy = {"52.172.35.99", 80}
-    #    case HTTPoison.get(@user_video_url, @headers, params: user_video_params, proxy: proxy) do
+#    proxy = {"39.137.69.9", 80}
+#    proxy = "http://112.5.240.206"
+#    case HTTPoison.get(@user_video_url, @headers, params: user_video_params, proxy: proxy) do
     case HTTPoison.get(@user_video_url, @headers, params: user_video_params) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
         %{"aweme_list" => aweme_list, "has_more" => has_more, "max_cursor" => max_cursor} =
           Jason.decode!(:zlib.gunzip(body))
 
-        videos = Enum.map(aweme_list, & &1["video"]["play_addr"]["uri"])
-
         case has_more do
-	  #          1 -> [videos | get_aweme_list(user_id, max_cursor)] |> List.flatten
-	  #          _ -> videos	    
-	  1 -> [aweme_list | get_aweme_list(user_id, max_cursor)] |> List.flatten |> Enum.filter(&(!is_nil(&1["video"])))
+	        1 -> [aweme_list | get_aweme_list(user_id, max_cursor)] |> List.flatten |> Enum.filter(&(!is_nil(&1["video"])))
           _ -> aweme_list
         end
 
