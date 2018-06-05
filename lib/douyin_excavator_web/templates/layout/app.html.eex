@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="抖音短视频用户批量视频解析下载">
     <meta name="author" content="">
     <meta name="referrer" content="never">
     <title>Hello DouyinExcavator!</title>
@@ -15,14 +15,14 @@
     -->
   </head>
 
-  <body class="has-navbar-fixed-top">
+  <body class="has-navbar-fixed-top has-background-white-ter">
     <%= render DouyinExcavatorWeb.SharedView, "nav.html"%>
     <section class="section">
 	    <div class="container">
 	      <%= form_for @conn, aweme_path(@conn, :index), [method: :get], fn f -> %>
 	      <div class="field is-grouped is-grouped-centered">
 		      <div class="control is-expanded">
-		        <%= search_input f, :query, type: "text", class: "input", placeholder: "用户分享链接(非抖音ID), 获取方法见帮助页面" %>
+		        <%= search_input f, :query, type: "text", class: "input", placeholder: "抖音用户分享链接: https://www.douyin.com/share/user/85860189461?share_type=link" %>
 		      </div>
 		      <div class="control">
 		        <%= submit("解析视频", class: "button is-primary") %>
@@ -37,12 +37,7 @@
 	      <%= render @view_module, @view_template, assigns %>
 	    </div>
     </section>
-    <footer class="footer">
-      <div class="container">
-        视频归相关网站及作者所有，本站不存储任何视频及图片。
-        &copy;2018 douyinxiu.com
-      </div>
-    </footer>
+    <%= render DouyinExcavatorWeb.SharedView, "footer.html" %>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

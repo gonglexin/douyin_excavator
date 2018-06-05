@@ -32,10 +32,10 @@ defmodule DouyinExcavator.Crawler do
       _signature: "sMGoBAAA6-BPPlf7dRn9pLDBqB"
     }
 
-    #    todo: Use proxy
-    #    proxy = {"39.137.69.9", 80}
-    #    proxy = "http://112.5.240.206"
-    #    case HTTPoison.get(@user_video_url, @headers, params: user_video_params, proxy: proxy) do
+    # todo: Use proxy
+    # proxy = {"36.24.1.234", 43357}
+
+    # case HTTPoison.get(@user_video_url, @headers, params: user_video_params, proxy: proxy) do
     case HTTPoison.get(@user_video_url, @headers, params: user_video_params) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
         %{"aweme_list" => aweme_list, "has_more" => has_more, "max_cursor" => max_cursor} =

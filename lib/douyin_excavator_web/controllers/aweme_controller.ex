@@ -31,7 +31,7 @@ defmodule DouyinExcavatorWeb.AwemeController do
                     "width" => 540
                   }
                 },
-                35
+                133
               )
 
   def index(conn, %{"query" => query}) do
