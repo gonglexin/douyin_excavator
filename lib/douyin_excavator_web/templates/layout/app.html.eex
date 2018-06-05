@@ -39,5 +39,12 @@
     </section>
     <%= render DouyinExcavatorWeb.SharedView, "footer.html" %>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-4917977412694391",
+        enable_page_level_ads: true
+      });
+    </script>
   </body>
 </html>
