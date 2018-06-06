@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="抖音短视频用户批量视频解析下载">
-    <meta name="author" content="">
+    <meta name="description" content="抖音用户视频批量解析下载">
+    <meta name="author" content="douzhazha.com">
     <meta name="referrer" content="never">
-    <title>豆渣渣 - 下载抖音用户全部视频</title>
+    <title>豆渣渣 - 抖音用户视频批量解析下载</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <link rel="stylesheet" href="https://cdn.bootcss.com/bulma/0.7.1/css/bulma.min.css">
   </head>
 
-  <body class="has-background-white-ter">
+   <body>
     <%= render DouyinExcavatorWeb.SharedView, "nav.html"%>
     <section class="section">
 	    <div class="container">
@@ -22,7 +22,7 @@
 		        <%= search_input f, :query, type: "text", class: "input", placeholder: "抖音用户ID(非抖音号)或分享链接: 85860189461 | https://www.douyin.com/share/user/85860189461?share_type=link" %>
 		      </div>
 		      <div class="control">
-		        <%= submit("解析视频", class: "button is-primary") %>
+		        <%= submit("解析视频", class: "button is-danger") %>
 		      </div>
 	      </div>
        <% end %>

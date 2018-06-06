@@ -1,5 +1,5 @@
 <div class="column is-2-desktop is-half-mobile is-one-third-tablet">
-  <video class="video" name="media" preload="none" poster="<%= DouyinExcavatorWeb.AwemeView.aweme_image_url(@aweme) %>" controls download="test.mp4">
+  <video controls class="video" name="media" preload="none" poster="<%= DouyinExcavatorWeb.AwemeView.aweme_image_url(@aweme) %>">
     <source src="<%= DouyinExcavatorWeb.AwemeView.aweme_video_url(@aweme) %>" type="video/mp4">
   </video>
 </div>

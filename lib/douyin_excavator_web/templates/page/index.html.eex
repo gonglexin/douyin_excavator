@@ -1,8 +1,12 @@
+
 <div class="columns is-multiline">
   <div class="column is-12">
-    <p><strong> 获取方法</strong>: (<em class="has-text-info">抖音号不是用户ID, 请务必参照下面的方法获取正确的ID或链接</em>)</p>
+    <article class="message is-dark">
+      <div class="message-body">
+        <strong>获取方法</strong>(<em>抖音号不是用户ID, 请务必参照下面的方法获取正确的ID或链接</em>):
+      </div>
+    </article>
   </div>
-
   <div class="column">
     <div class="card">
       <div class="card-image">
