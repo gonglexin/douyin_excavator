@@ -1,13 +1,9 @@
 <div class="columns is-multiline">
-  <!--
-  <div class="column is-12 has-text-centered">
-    <p>抖音短视频用户批量视频解析下载</p>
-    <ul>
-      <li>支持解析用户全部作品，喜欢视频</li>
-    </ul>
+  <div class="column is-12">
+    <p><strong> 获取方法</strong>: (<em class="has-text-info">抖音号不是用户ID, 请务必参照下面的方法获取正确的ID或链接</em>)</p>
   </div>
--->
-  <div class="column is-3">
+
+  <div class="column">
     <div class="card">
       <div class="card-image">
         <figure class="image">
@@ -22,7 +18,7 @@
     </div>
   </div>
 
-  <div class="column is-3">
+  <div class="column">
     <div class="card">
       <div class="card-image">
         <figure class="image">
@@ -31,13 +27,13 @@
       </div>
       <div class="card-content">
         <div class="content">
-          用户主页点开分享链接
+          选择链接形式分享到微信好友
         </div>
       </div>
     </div>
   </div>
 
-  <div class="column is-3">
+  <div class="column">
     <div class="card">
       <div class="card-image">
         <figure class="image">
@@ -46,12 +42,12 @@
       </div>
       <div class="card-content">
         <div class="content">
-          用户主页点开分享链接
+          选择任意一个聊天对象发送
         </div>
       </div>
     </div>
   </div>
-  <div class="column is-3">
+  <div class="column">
     <div class="card">
       <div class="card-image">
         <figure class="image">
@@ -60,12 +56,12 @@
       </div>
       <div class="card-content">
         <div class="content">
-          用户主页点开分享链接
+          在聊天窗口点开分享链接
         </div>
       </div>
     </div>
   </div>
-  <div class="column is-3">
+  <div class="column">
     <div class="card">
       <div class="card-image">
         <figure class="image">
@@ -74,7 +70,7 @@
       </div>
       <div class="card-content">
         <div class="content">
-          用户主页点开分享链接
+          复制链接到本站解析视频
         </div>
       </div>
     </div>

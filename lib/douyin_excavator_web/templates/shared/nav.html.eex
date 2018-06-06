@@ -1,13 +1,15 @@
-<nav id="navbar" class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
+<nav id="navbar" class="navbar is-primary" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">下载抖音用户全部视频</a>
+      <a class="navbar-item" href="/">豆渣渣 - 下载抖音用户全部视频</a>
     </div>
+    <!--
     <div class="navbar-menu">
       <div class="navbar-end">
         <a class="navbar-item" href="#">视频下载方法</a>
         <a class="navbar-item" href="#">关于本站</a>
       </div>
     </div>
+    -->
   </div>
 </nav>

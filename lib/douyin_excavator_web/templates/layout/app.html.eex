@@ -7,22 +7,19 @@
     <meta name="description" content="抖音短视频用户批量视频解析下载">
     <meta name="author" content="">
     <meta name="referrer" content="never">
-    <title>Hello DouyinExcavator!</title>
+    <title>豆渣渣 - 下载抖音用户全部视频</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <link rel="stylesheet" href="https://cdn.bootcss.com/bulma/0.7.1/css/bulma.min.css">
-    <!--
-         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    -->
   </head>
 
-  <body class="has-navbar-fixed-top has-background-white-ter">
+  <body class="has-background-white-ter">
     <%= render DouyinExcavatorWeb.SharedView, "nav.html"%>
     <section class="section">
 	    <div class="container">
 	      <%= form_for @conn, aweme_path(@conn, :index), [method: :get], fn f -> %>
 	      <div class="field is-grouped is-grouped-centered">
 		      <div class="control is-expanded">
-		        <%= search_input f, :query, type: "text", class: "input", placeholder: "抖音用户分享链接: https://www.douyin.com/share/user/85860189461?share_type=link" %>
+		        <%= search_input f, :query, type: "text", class: "input", placeholder: "抖音用户ID(非抖音号)或分享链接: 85860189461 | https://www.douyin.com/share/user/85860189461?share_type=link" %>
 		      </div>
 		      <div class="control">
 		        <%= submit("解析视频", class: "button is-primary") %>
