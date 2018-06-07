@@ -7,6 +7,7 @@
     <meta name="description" content="抖音用户视频批量解析下载">
     <meta name="author" content="douzhazha.com">
     <meta name="referrer" content="never">
+    <%= csrf_meta_tag %>
     <title>豆渣渣 - 抖音用户视频批量解析下载</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <link rel="stylesheet" href="https://cdn.bootcss.com/bulma/0.7.1/css/bulma.min.css">
@@ -16,21 +17,20 @@
     <%= render DouyinExcavatorWeb.SharedView, "nav.html"%>
     <section class="section">
 	    <div class="container">
-	      <%= form_for @conn, aweme_path(@conn, :index), [method: :get], fn f -> %>
+
 	      <div class="field is-grouped is-grouped-centered">
 		      <div class="control is-expanded">
-		        <%= search_input f, :query, type: "text", class: "input", placeholder: "抖音用户ID(非抖音号)或分享链接: 85860189461 | https://www.douyin.com/share/user/85860189461?share_type=link" %>
+            <input id="query" type="text", class="input", placeholder="抖音用户ID(非抖音号)或分享链接: 85860189461 | https://www.douyin.com/share/user/85860189461?share_type=link">
 		      </div>
 		      <div class="control">
-		        <%= submit("解析视频", class: "button is-danger") %>
+            <button class="button is-danger" id="search">解析视频</button>
 		      </div>
 	      </div>
-       <% end %>
 	    </div>
     </section>
     <section class="section">
 	    <div class="container">
-        <%= render DouyinExcavatorWeb.SharedView, "flash.html", conn: @conn %>
+
 	      <%= render @view_module, @view_template, assigns %>
 	    </div>
     </section>

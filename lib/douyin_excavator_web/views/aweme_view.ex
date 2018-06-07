@@ -3,6 +3,17 @@ defmodule DouyinExcavatorWeb.AwemeView do
 
   @download_url "https://aweme.snssdk.com/aweme/v1/play/"
 
+  def render("index.json", %{awemes: awemes}) do
+    %{data: render_many(awemes, DouyinExcavatorWeb.AwemeView, "aweme.json")}
+  end
+
+  def render("aweme.json", %{aweme: aweme}) do
+    %{
+      i: aweme_image_url(aweme),
+      v: aweme_video_url(aweme)
+    }
+  end
+
   def aweme_video_url(%{"video" => video}) do
     uri = video["play_addr"]["uri"]
 

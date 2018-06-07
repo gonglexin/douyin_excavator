@@ -17,11 +17,11 @@ defmodule DouyinExcavatorWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    resources "/aweme", AwemeController, only: [:index]
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", DouyinExcavatorWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", DouyinExcavatorWeb do
+     pipe_through :api
+
+     post "/aweme", AwemeController, :index
+  end
 end

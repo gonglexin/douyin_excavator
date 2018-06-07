@@ -19,3 +19,46 @@ import "phoenix_html"
 // paths "./socket" or full ones "web/static/js/socket".
 
 // import socket from "./socket"
+
+import { Ajax } from "phoenix";
+
+let searchButton = document.querySelector("#search")
+
+searchButton.addEventListener("click", event => {
+  let query = document.querySelector("#query").value
+
+  let button = event.target
+  button.classList.add('is-loading')
+  //  Ajax.request("POST", "/api/aweme", "application/json", "", 1000, onTimeout, callback);
+  let body = {query: query}
+  Ajax.request(
+    "POST", "/api/aweme",
+    "application/json", JSON.stringify(body),
+    10000, null,
+    function(res) {
+      button.classList.remove('is-loading');
+      renderVideos(res.data)
+    });
+});
+
+function renderVideos(videos) {
+  var videosDiv = document.getElementById("videos")
+  videosDiv.innerHTML = ''
+  videos.forEach(function(video) {
+    var div = document.createElement('div')
+    div.setAttribute('class', 'column is-2-desktop is-half-mobile is-one-third-tablet')
+    var v = document.createElement('video')
+    v.setAttribute('controls', true)
+    v.setAttribute('class', 'video')
+    v.setAttribute('name', 'media')
+    v.setAttribute('preload', 'none')
+    v.setAttribute('poster', video.i)
+    var src = document.createElement('source')
+    src.setAttribute('src', video.v)
+    src.setAttribute('type', 'video/mp4')
+    v.appendChild(src)
+
+    div.appendChild(v)
+    videosDiv.appendChild(div)
+  })
+}
