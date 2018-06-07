@@ -20,7 +20,7 @@
 
 	      <div class="field is-grouped is-grouped-centered">
 		      <div class="control is-expanded">
-            <input id="query" type="text", class="input", placeholder="抖音用户ID(非抖音号)或分享链接: 85860189461 | https://www.douyin.com/share/user/85860189461?share_type=link">
+            <input id="query" type="text", class="input", placeholder="抖音用户ID(非抖音号)或分享链接: 94702709996 | https://www.douyin.com/share/user/94702709996?share_type=link">
 		      </div>
 		      <div class="control">
             <button class="button is-danger" id="search">解析视频</button>

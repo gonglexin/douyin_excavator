@@ -5,7 +5,7 @@
   <div class="column is-12">
     <article class="message is-dark">
       <div class="message-body">
-        <strong>获取方法</strong>(<em>抖音号不是用户ID, 请务必参照下面的方法获取正确的ID或链接</em>):
+        <strong>用户分享链接获取方法</strong>(<em>抖音号不是用户ID, 请务必参照下面的方法获取正确的ID或链接</em>):
       </div>
     </article>
   </div>
@@ -13,7 +13,7 @@
     <div class="card">
       <div class="card-image">
         <figure class="image">
-          <img src="https://raw.githubusercontent.com/loadchange/amemv-crawler/master/picture/step1.jpg" alt="Placeholder image">
+          <img src="https://i.loli.net/2018/06/07/5b19504c56ed9.jpg" alt="用户主页点开分享链接" />
         </figure>
       </div>
       <div class="card-content">
@@ -28,7 +28,7 @@
     <div class="card">
       <div class="card-image">
         <figure class="image">
-          <img src="https://raw.githubusercontent.com/loadchange/amemv-crawler/master/picture/step2.jpg" alt="Placeholder image">
+          <img src="https://i.loli.net/2018/06/07/5b19504c30ede.jpg" alt="选择链接形式分享到微信好友" />
         </figure>
       </div>
       <div class="card-content">
@@ -43,7 +43,7 @@
     <div class="card">
       <div class="card-image">
         <figure class="image">
-          <img src="https://raw.githubusercontent.com/loadchange/amemv-crawler/master/picture/step3.png" alt="Placeholder image">
+          <img src="https://i.loli.net/2018/06/07/5b19504c1654c.jpg" alt="选择任意一个聊天对象发送" />
         </figure>
       </div>
       <div class="card-content">
@@ -57,7 +57,7 @@
     <div class="card">
       <div class="card-image">
         <figure class="image">
-          <img src="https://raw.githubusercontent.com/loadchange/amemv-crawler/master/picture/step4.png" alt="Placeholder image">
+          <img src="https://i.loli.net/2018/06/07/5b19504bf2e7d.jpg" alt="在聊天窗口点开分享链接" />
         </figure>
       </div>
       <div class="card-content">
@@ -71,7 +71,7 @@
     <div class="card">
       <div class="card-image">
         <figure class="image">
-          <img src="https://raw.githubusercontent.com/loadchange/amemv-crawler/master/picture/step5.jpg" alt="Placeholder image">
+          <img src="https://i.loli.net/2018/06/07/5b19504bd1875.jpg" alt="复制链接到本站解析视频" />
         </figure>
       </div>
       <div class="card-content">
