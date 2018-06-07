@@ -41,6 +41,10 @@ searchButton.addEventListener("click", event => {
     });
 });
 
+function video_url(video_id) {
+  return 'https://aweme.snssdk.com/aweme/v1/play/?line=0&ratio=720p&media_type=4&vr_type=0&test_cdn=None&improve_bitrate=0&video_id=' + video_id
+}
+
 function renderVideos(videos) {
   var videosDiv = document.getElementById("videos")
   videosDiv.innerHTML = ''
@@ -54,7 +58,7 @@ function renderVideos(videos) {
     v.setAttribute('preload', 'none')
     v.setAttribute('poster', video.i)
     var src = document.createElement('source')
-    src.setAttribute('src', video.v)
+    src.setAttribute('src', video_url(video.v))
     src.setAttribute('type', 'video/mp4')
     v.appendChild(src)
 

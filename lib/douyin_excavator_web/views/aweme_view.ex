@@ -10,8 +10,16 @@ defmodule DouyinExcavatorWeb.AwemeView do
   def render("aweme.json", %{aweme: aweme}) do
     %{
       i: aweme_image_url(aweme),
-      v: aweme_video_url(aweme)
+      v: aweme_video_uri(aweme)
     }
+  end
+
+  def aweme_video_uri(%{"video" => %{"play_addr" => %{"uri" => uri}}}) do
+    uri
+  end
+
+  def aweme_video_uri(_) do
+    nil
   end
 
   def aweme_video_url(%{"video" => video}) do
