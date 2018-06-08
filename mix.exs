@@ -40,7 +40,7 @@ defmodule DouyinExcavator.Mixfile do
       {:cowboy, "~> 1.0"},
       {:httpoison, "~> 1.0"},
       {:jason, "~> 1.0"},
-#      {:browser, "~> 0.1.0"}
+      {:distillery, "~> 1.5", runtime: false}
     ]
   end
 end
