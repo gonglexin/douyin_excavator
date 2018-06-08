@@ -17,19 +17,17 @@ defmodule DouyinExcavator.Crawler do
 
   def get_aweme_list(user_id, max_cursor \\ "0")
 
-  def get_aweme_list(nil, max_cursor) do
+  def get_aweme_list(nil, _max_cursor) do
     []
   end
 
-  # todo: get the signature
   def get_aweme_list(user_id, max_cursor) do
     user_video_params = %{
       user_id: user_id,
       count: "21",
       max_cursor: max_cursor,
       aid: "1128",
-      # _signature: "82.EuQAAqIcMkDtGiE4oH.NvxK"
-      _signature: "sMGoBAAA6-BPPlf7dRn9pLDBqB"
+      _signature: get_signature(user_id)
     }
 
     # todo: Use proxy
@@ -53,6 +51,19 @@ defmodule DouyinExcavator.Crawler do
 
       {:error, %HTTPoison.Error{reason: reason}} ->
         IO.inspect(reason)
+    end
+  end
+
+  defp get_signature(user_id) do
+    case System.cmd("node", [
+           Path.join(Application.app_dir(:douyin_excavator, "priv"), "fuck-byted-acrawler.js"),
+           user_id
+         ]) do
+      {signature, 0} ->
+        signature
+
+      {_} ->
+        nil
     end
   end
 end
