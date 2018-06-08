@@ -52,7 +52,7 @@ function renderVideos(videos) {
     var div = document.createElement('div')
     div.setAttribute('class', 'column is-2-desktop is-half-mobile is-one-third-tablet')
     var v = document.createElement('video')
-    v.setAttribute('controls', true)
+    v.setAttribute('controls', 'controls')
     v.setAttribute('class', 'video')
     v.setAttribute('name', 'media')
     v.setAttribute('preload', 'none')

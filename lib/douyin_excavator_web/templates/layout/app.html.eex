@@ -7,7 +7,7 @@
     <meta name="description" content="抖音用户视频批量解析下载">
     <meta name="author" content="douzhazha.com">
     <meta name="referrer" content="never">
-    <%= csrf_meta_tag %>
+    <%= csrf_meta_tag() %>
     <title>豆渣渣 - 抖音用户视频批量解析下载</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <link rel="stylesheet" href="https://cdn.bootcss.com/bulma/0.7.1/css/bulma.min.css">
@@ -39,7 +39,7 @@
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-4917977412694391",
+        google_ad_client: "ca-pub-6688283983292862",
         enable_page_level_ads: true
       });
     </script>
