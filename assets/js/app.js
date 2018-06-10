@@ -34,7 +34,7 @@ searchButton.addEventListener("click", event => {
   Ajax.request(
     "POST", "/api/aweme",
     "application/json", JSON.stringify(body),
-    10000, null,
+    30000, null,
     function(res) {
       button.classList.remove('is-loading');
       renderVideos(res.data)
