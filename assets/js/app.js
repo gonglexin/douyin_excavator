@@ -34,7 +34,10 @@ searchButton.addEventListener("click", event => {
   Ajax.request(
     "POST", "/api/aweme",
     "application/json", JSON.stringify(body),
-    30000, null,
+    30000,
+    function(e){
+      console.log('超时,请重试!')
+    },
     function(res) {
       button.classList.remove('is-loading');
       renderVideos(res.data)
