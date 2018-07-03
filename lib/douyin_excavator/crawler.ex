@@ -15,6 +15,14 @@ defmodule DouyinExcavator.Crawler do
       "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1"
   ]
 
+  def get_user_id(url) do
+    cond do
+      String.contains?(url, "share/user") -> get_id(url)
+      String.contains?(url, "v.douyin.com") -> get_user_location(url) |> get_id
+      true -> get_id(url)
+    end
+  end
+
   def get_aweme_list(user_id, max_cursor \\ "0")
 
   def get_aweme_list(nil, _max_cursor) do
@@ -64,6 +72,20 @@ defmodule DouyinExcavator.Crawler do
 
       {_} ->
         nil
+    end
+  end
+
+  defp get_user_location(url) do
+    with {:ok, response} = HTTPoison.get(url),
+         headers = Map.get(response, :headers),
+         {"Location", location} = Enum.find(headers, fn x -> elem(x, 0) == "Location" end),
+         do: location
+  end
+
+  defp get_id(url) do
+    case Regex.run(~r/\d+/, url) do
+      nil -> nil
+      match -> match |> hd()
     end
   end
 end

@@ -1,6 +1,8 @@
 defmodule DouyinExcavatorWeb.AwemeController do
   use DouyinExcavatorWeb, :controller
 
+  alias DouyinExcavator.Crawler
+
   @aweme_list List.duplicate(
                 %{
                   "video" => %{
@@ -35,13 +37,8 @@ defmodule DouyinExcavatorWeb.AwemeController do
               )
 
   def index(conn, %{"query" => query}) do
-    user_id =
-      case Regex.run(~r/\d+/, query) do
-        nil -> nil
-        match -> match |> hd()
-      end
-
-    render(conn, "index.json", awemes: DouyinExcavator.Crawler.get_aweme_list(user_id))
+    user_id = Crawler.get_user_id(query)
+    render(conn, "index.json", awemes: Crawler.get_aweme_list(user_id))
     # render(conn, "index.json", awemes: @aweme_list)
   end
 
