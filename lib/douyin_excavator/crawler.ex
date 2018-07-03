@@ -43,7 +43,12 @@ defmodule DouyinExcavator.Crawler do
     # proxy = {"36.24.1.234", 43357}
 
     # case HTTPoison.get(@user_video_url, @headers, params: user_video_params, proxy: proxy) do
-    Logger.info "Getting videos for user: #{user_id} with signature #{Map.get(user_video_params, :_signature)}"
+    Logger.info(
+      "Getting videos for user: #{user_id} with signature #{
+        Map.get(user_video_params, :_signature)
+      }"
+    )
+
     case HTTPoison.get(@user_video_url, @headers, params: user_video_params) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
         %{"aweme_list" => aweme_list, "has_more" => has_more, "max_cursor" => max_cursor} =
@@ -78,7 +83,7 @@ defmodule DouyinExcavator.Crawler do
   end
 
   defp get_user_location(url) do
-    with {:ok, response} = HTTPoison.get(url),
+    with {:ok, response} = HTTPoison.get(url, @headers),
          headers = Map.get(response, :headers),
          {"Location", location} = Enum.find(headers, fn x -> elem(x, 0) == "Location" end),
          do: location
