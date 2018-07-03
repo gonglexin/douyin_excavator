@@ -1,4 +1,5 @@
 require IEx
+require Logger
 
 defmodule DouyinExcavator.Crawler do
   @user_video_url "https://www.douyin.com/aweme/v1/aweme/post/"
@@ -42,6 +43,7 @@ defmodule DouyinExcavator.Crawler do
     # proxy = {"36.24.1.234", 43357}
 
     # case HTTPoison.get(@user_video_url, @headers, params: user_video_params, proxy: proxy) do
+    Logger.info "Getting videos for user: #{user_id} with signature #{Map.get(user_video_params, :_signature)}"
     case HTTPoison.get(@user_video_url, @headers, params: user_video_params) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
         %{"aweme_list" => aweme_list, "has_more" => has_more, "max_cursor" => max_cursor} =

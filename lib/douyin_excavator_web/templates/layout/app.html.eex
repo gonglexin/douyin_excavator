@@ -17,7 +17,9 @@
     <%= render DouyinExcavatorWeb.SharedView, "nav.html"%>
     <section class="section">
 	    <div class="container">
-
+        <div class="notification is-warning">
+          算法模块更新中，请稍后访问
+        </div>
 	      <div class="field is-grouped is-grouped-centered">
 		      <div class="control is-expanded">
             <input id="query" type="text", class="input", placeholder="抖音用户ID(非抖音号)或分享链接: 94702709996 | https://www.douyin.com/share/user/94702709996?share_type=link">
@@ -30,7 +32,6 @@
     </section>
     <section class="section">
 	    <div class="container">
-
 	      <%= render @view_module, @view_template, assigns %>
 	    </div>
     </section>
